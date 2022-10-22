@@ -3,7 +3,9 @@ import RoutesMain from './routes'
 
 const App = () => {
   return (
-    <RoutesMain />
+    <div>
+      <RoutesMain />
+    </div>
   )
 }
 
