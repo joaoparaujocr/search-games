@@ -50,6 +50,8 @@ const MainShowCase = styled.main`
     ::-webkit-scrollbar {
       width: 1px;
       height: 8px;
+      background-color: white;
+      border-radius: 10px;
     }
     
 
