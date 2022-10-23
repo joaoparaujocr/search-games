@@ -12,7 +12,7 @@ const CardCart = ({gameID, thumb, title, game}: ICardCart) => {
         <img src={thumb} alt="" />
       </figure>
       <div>
-        <h4>{title}</h4>
+        <h4>{title.length > 32 ? `${title.slice(0, 29)}...` : title}</h4>
         <button onClick={() => removeGameToCart(game)} >Remover</button>
       </div>
     </LiCart>
