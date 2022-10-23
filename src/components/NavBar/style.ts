@@ -32,7 +32,7 @@ export const HeaderStyle = styled.header`
       background-color: white;
       width: 40px;
       height: 40px;
-      border-radius: 50%;
+      border-radius: 5px;
 
       svg {
         font-size: 20px;
