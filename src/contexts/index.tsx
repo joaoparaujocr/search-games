@@ -1,4 +1,5 @@
 import { ReactNode } from "react"
+import ProviderGameDeals from "./GameDeals"
 import ProviderHome from "./Home"
 import ProviderSearchGame from "./SearchGame"
 import ProviderUser from "./User"
@@ -8,7 +9,9 @@ const Providers = ({ children }: { children: ReactNode }) => {
     <ProviderUser>
       <ProviderHome>
         <ProviderSearchGame>
-          {children}
+          <ProviderGameDeals>
+            {children}
+          </ProviderGameDeals>
         </ProviderSearchGame>
       </ProviderHome>
     </ProviderUser>

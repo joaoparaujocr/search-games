@@ -1,9 +1,10 @@
 import { HeaderStyle } from "./style";
-import { BsSearch, BsFilterCircleFill, BsFillCartFill } from "react-icons/bs";
+import { BsSearch, BsFillCartFill } from "react-icons/bs";
 import { toast } from "react-hot-toast";
-import { useRef, useState } from "react";
+import { useContext, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Cart from "../Cart";
+import { ContextUser } from "../../contexts/User";
 
 const NavBar = () => {
   const [cartIsVisible, setIsVisible] = useState<boolean>(false);
@@ -32,12 +33,11 @@ const NavBar = () => {
         <h1 className="logo" onClick={() => navigate("/")}>Search Games</h1>
 
         <div>
-          <button onClick={openCart} className="Cart"><BsFillCartFill size={20} color="black"/></button>
+          <button onClick={openCart} className="Cart"><BsFillCartFill color="black"/></button>
           <div className="boxSearch">
             <input onKeyDown={event} ref={inputSearch} type="text" placeholder="Digite sua pesquisa" />
             <button onClick={submitSearch} ><BsSearch color="black" size={20} /></button>
           </div>
-          <button><BsFilterCircleFill size={25} color="white" /></button>
         </div>
       </HeaderStyle>
     </>

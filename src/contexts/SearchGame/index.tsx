@@ -1,13 +1,14 @@
-import { createContext, useEffect, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 import { IContextSearchGame, IProviderSearchGame } from "../../interfaces/context";
 import { IDeals } from "../../interfaces/service";
 import api from "../../services";
+import { ContextUser } from "../User";
 
 export const ContextSearchGame = createContext({} as IContextSearchGame);
 
 const ProviderSearchGame = ({ children }: IProviderSearchGame ) => {
   const [listOfGames, setListOfGames] = useState<IDeals[]>([]);
-  const [isLoading, setIsLoading] = useState(false);
+  const { setIsLoading } = useContext(ContextUser);
   const [valueSearch, setValueSearch] = useState("");
   
   useEffect(() => {
@@ -24,7 +25,7 @@ const ProviderSearchGame = ({ children }: IProviderSearchGame ) => {
 
 
   return (
-    <ContextSearchGame.Provider value={{listOfGames, isLoading, setValueSearch}}>
+    <ContextSearchGame.Provider value={{listOfGames, setValueSearch}}>
       {children}
     </ContextSearchGame.Provider>
   )

@@ -1,6 +1,12 @@
+import NavBar from "../../components/NavBar";
+import Title from "./style";
+
 const NotFound = () => {
   return (
-    <h1>404 Not found</h1>
+    <>
+      <NavBar />
+      <Title>Page Not found 404</Title>
+    </>
   )
 }
 

@@ -9,14 +9,12 @@ export interface IContextHome {
   listDeals: IDeals[]
   setCurrentPage: Dispatch<SetStateAction<number>>
   currentPage: number
-  isLoading: boolean
 }
 
 export interface IProviderSearchGame extends IProviderHome {}
 
 export interface IContextSearchGame {
   listOfGames: IDeals[]
-  isLoading: boolean
   setValueSearch: Dispatch<SetStateAction<string>>
 }
 
@@ -29,4 +27,37 @@ export interface IContextUser {
   removeGameToCart: (gameRemove: IDeals) => void
   listCart: IDeals[]
   removeAllGames: () => void
+  setIsLoading: Dispatch<SetStateAction<boolean>>
+  isLoading: boolean
+  searchCartGames:  () => Promise<string | undefined>
+  cartProductInformation: any
+}
+
+export interface IContextGameDeals {
+  setIdParams: Dispatch<SetStateAction<string>>
+  infoGame: IInfoGame
+}
+
+export interface IInfoGame {
+  info: {
+    title: string
+    steamAppID: string
+    thumb: string
+  },
+  cheapestPriceEver: {
+    price: string
+    date: number
+  },
+  deals: {
+    storeID: string
+    dealID: string
+    price: string,
+    retailPrice: string,
+    savings: string
+  }[]
+}
+
+export interface IProviderGameDeals {
+  children: ReactNode,
+
 }

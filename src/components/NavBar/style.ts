@@ -7,28 +7,53 @@ export const HeaderStyle = styled.header`
   justify-content: space-between;
   align-items: center;
 
+  @media screen and (max-width: 650px) {
+    flex-direction: column;
+    padding: 10px 2%;
+
+    h1 {
+      margin-bottom: 20px;
+    }
+  }
+
   > .logo {
     cursor: pointer;
   }
 
   > div {
+    max-width: 340px;
+    width: 100%;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
 
     button.Cart {
       margin-right: 30px;
       background-color: white;
-      width: 35px;
-      height: 35px;
+      width: 40px;
+      height: 40px;
       border-radius: 50%;
+
+      svg {
+        font-size: 20px;
+      }
+
+      @media screen and (max-width: 340px) {
+        width: 25px;
+        height: 25px;
+        margin: 10px;
+
+        svg {
+          font-size: 18px;
+        }
+      }
     }
 
     > .boxSearch {
-      background-color: white;
-      margin-right: 30px;
+      width: 100%;
       display: flex;
       justify-content: space-between;
+      background-color: white;
       align-items: center;
       border-radius: 5px;
 
@@ -44,6 +69,10 @@ export const HeaderStyle = styled.header`
 
       > button {
         padding: 5px;
+      }
+
+      @media screen and (max-width: 320px) {
+        
       }
     }
   }

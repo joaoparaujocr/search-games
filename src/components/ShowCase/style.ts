@@ -13,6 +13,14 @@ const MainShowCase = styled.main`
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
+
+    @media screen and (max-width: 500px) {
+      gap: 10px;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+    }
   }
 `
 export default MainShowCase

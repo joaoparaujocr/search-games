@@ -7,7 +7,7 @@ import { ContextUser } from "../../contexts/User";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 
 const Cart = ({ isVisible, setIsVisible }: ICart) => {
-  const { listCart, removeAllGames } = useContext(ContextUser)
+  const { listCart, removeAllGames, searchCartGames } = useContext(ContextUser)
 
   const closeCart = () => setIsVisible(!isVisible);
 
@@ -27,14 +27,17 @@ const Cart = ({ isVisible, setIsVisible }: ICart) => {
             <h1>Carrinho Vazio<AiOutlineShoppingCart /></h1>
           ) : 
           listCart.map(game => (
-            <CardCart game={game} gameID={game.gameID} thumb={game.thumb} title={game.title} />
+            <CardCart key={game.gameID} game={game} gameID={game.gameID} thumb={game.thumb} title={game.title} />
           )
           )}
         </ul>
         {listCart.length > 0 && (
           <div className="btnsCart">
             <button onClick={removeAllGames} className="btnClearCart">Esvaziar carrinho</button>
-            <button className="btnSearch" >Pesquisar</button>
+            <button onClick={() => {
+              searchCartGames()
+              closeCart()
+            }} className="btnSearch" >Pesquisar</button>
           </div>
         )}
       </main>

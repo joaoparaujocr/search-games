@@ -3,10 +3,12 @@ import Loading from "../../components/Loading"
 import NavBar from "../../components/NavBar"
 import ShowCase from "../../components/ShowCase"
 import { ContextHome } from "../../contexts/Home/index"
+import { ContextUser } from "../../contexts/User"
 import BoxPages from "./style"
 
 const Home = () => {
-  const { listDeals, setCurrentPage, currentPage, isLoading } = useContext(ContextHome);
+  const { listDeals, setCurrentPage, currentPage } = useContext(ContextHome);
+  const { isLoading } = useContext(ContextUser)
 
   const previousPage = () => {
     setCurrentPage(currentPage - 1);

@@ -9,6 +9,19 @@ const CardLi = styled.li`
   border-radius: 5px;
   padding: 10px 15px;
 
+  @media screen and (max-width: 900px) {
+    width: calc((100% / 3) - 9px);
+  }
+
+  @media screen and (max-width: 700px) {
+    width: calc((100% / 2) - 9px);
+  }
+
+  @media screen and (max-width: 500px) {
+    max-width: 400px;
+    width: calc(100%);
+  }
+
   figure {
     border-radius: 5px;
     width: 100%;

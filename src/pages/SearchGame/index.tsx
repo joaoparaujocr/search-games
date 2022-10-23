@@ -4,9 +4,11 @@ import Loading from "../../components/Loading"
 import NavBar from "../../components/NavBar"
 import ShowCase from "../../components/ShowCase"
 import { ContextSearchGame } from "../../contexts/SearchGame"
+import { ContextUser } from "../../contexts/User"
 
 const SearchGame = () => {
-  const { listOfGames, isLoading, setValueSearch } = useContext(ContextSearchGame)
+  const { listOfGames, setValueSearch } = useContext(ContextSearchGame);
+  const { isLoading } = useContext(ContextUser);
 
   const { search } = useParams();
   useEffect(() => {
