@@ -9,9 +9,11 @@ const RoutesMain = () => {
   return (
     <Routes>
       <Route path="/" element={<Home/>} />
-      <Route path="/game/:search" element={<SearchGame />} />
-      <Route path="/game/deals/:id" element={<GameDeals />} />
-      <Route path="/game/searchCart" element={<SearchCartGames />} />
+      <Route path="/game">
+        <Route path=":search" element={<SearchGame />} />
+        <Route path="deals/:id" element={<GameDeals />} />
+        <Route path="searchCart" element={<SearchCartGames />} />
+      </Route>
       <Route path="*" element={<NotFound />} />
     </Routes>
   )
