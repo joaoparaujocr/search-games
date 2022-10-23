@@ -49,7 +49,7 @@ const MainShowCase = styled.main`
 
     ::-webkit-scrollbar {
       width: 1px;
-      height: 8px;
+      height: 9px;
       background-color: white;
       border-radius: 10px;
     }
