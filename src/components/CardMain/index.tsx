@@ -1,5 +1,5 @@
 import { ICardMain } from "../../interfaces/components/CardMain";
-import { formatValue } from "../../utils";
+import { formatValueBRL } from "../../utils";
 import { AiTwotoneStar } from "react-icons/ai";
 import CardLi from "./style";
 import { useContext } from "react";
@@ -27,8 +27,8 @@ const CardMain = ({
       <h2>{title}</h2>
       <div className="boxInfo">
         <div className="prices">
-          <h4 className="normalPrice">De: {formatValue(normalPrice)}</h4>
-          <h4 className="salePrice">Por: {formatValue(salePrice)}</h4>
+          <h4 className="normalPrice">De: {formatValueBRL(normalPrice)}</h4>
+          <h4 className="salePrice">Por: {formatValueBRL(salePrice)}</h4>
         </div>
 
         <div className="starRating">
