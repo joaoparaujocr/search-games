@@ -21,7 +21,7 @@ const MainShowCase = styled.main`
       width: 40%;
     }
 
-    @media screen and (max-width: 360px) {
+    @media screen and (max-width: 320px) {
       width: 100%;
     }
 
