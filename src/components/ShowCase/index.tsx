@@ -7,7 +7,8 @@ const ShowCase = ({ title, listGames }: IShowCase) => {
     <MainShowCase>
       <h2>{title}</h2>
       <ul>
-        {listGames.map(
+        {listGames.length === 0 ? <h1>Nada foi encontrado!</h1> :
+        listGames.map(
           (game) => {
             return (
               <CardMain
