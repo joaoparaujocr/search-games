@@ -1,7 +1,7 @@
 export interface IDeals {
   internalName: string
 	title: string
-	metacriticLink: string
+	metacriticLink: string | null
 	dealID: string
 	storeID: string
 	gameID: string
@@ -14,8 +14,8 @@ export interface IDeals {
 	steamRatingPercent: string
 	steamRatingCount: string
 	steamAppID: string
-	releaseDate: string
-	lastChange: string
+	releaseDate: number
+	lastChange: number
 	dealRating: string
 	thumb: string
 }

@@ -1,10 +1,9 @@
 import { HeaderStyle } from "./style";
 import { BsSearch, BsFillCartFill } from "react-icons/bs";
 import { toast } from "react-hot-toast";
-import { useContext, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Cart from "../Cart";
-import { ContextUser } from "../../contexts/User";
 
 const NavBar = () => {
   const [cartIsVisible, setIsVisible] = useState<boolean>(false);
@@ -28,18 +27,18 @@ const NavBar = () => {
 
   return (
     <>
-      <Cart isVisible={cartIsVisible} setIsVisible={setIsVisible} />
       <HeaderStyle>
         <h1 className="logo" onClick={() => navigate("/")}>Search Games</h1>
 
-        <div>
-          <button onClick={openCart} className="Cart"><BsFillCartFill color="black"/></button>
+        <div data-testid="element-box-controller">
+          <button data-testid="button-cart" onClick={openCart} className="Cart"><BsFillCartFill color="black"/></button>
           <div className="boxSearch">
             <input onKeyDown={event} ref={inputSearch} type="text" placeholder="Digite sua pesquisa" />
-            <button onClick={submitSearch} ><BsSearch color="black" size={20} /></button>
+            <button data-testid="button-search" onClick={submitSearch} ><BsSearch color="black" size={20} /></button>
           </div>
         </div>
       </HeaderStyle>
+      <Cart isVisible={cartIsVisible} setIsVisible={setIsVisible} />
     </>
   )
 }
