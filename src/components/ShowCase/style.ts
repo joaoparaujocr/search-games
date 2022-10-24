@@ -14,6 +14,11 @@ const MainShowCase = styled.main`
     flex-wrap: wrap;
     gap: 10px;
 
+    h1 {
+      text-align: center;
+      color: white;
+    }
+
     @media screen and (max-width: 500px) {
       gap: 10px;
       flex-direction: column;
